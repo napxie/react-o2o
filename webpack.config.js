@@ -50,9 +50,9 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
 
         // 打开浏览器
-        new OpenBrowserPlugin({
+        /*new OpenBrowserPlugin({
           url: 'http://localhost:8080'
-        }),
+        }),*/
 
         // 可在业务 js 代码中使用 __DEV__ 判断是否是dev模式（dev模式下可以提示错误、测试报告等, production模式不提示）
         new webpack.DefinePlugin({
@@ -73,6 +73,10 @@ module.exports = {
         colors: true, //终端中输出结果为彩色
         historyApiFallback: true, //不跳转
         inline: true, //实时刷新
-        hot: true  // 使用热加载插件 HotModuleReplacementPlugin
+        hot: true,  // 使用热加载插件 HotModuleReplacementPlugin
+        disableHostCheck: true,
+        host: "0.0.0.0",
+        port: 80
     }
 }
+
